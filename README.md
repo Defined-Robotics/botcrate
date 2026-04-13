@@ -65,8 +65,8 @@ then run the `inspect` task — it captures images at each survey point.
 `defined.yaml` for a different environment. Same tasks, different layout.
 
 **See capability gating:** Point to `robots/minimal.rdf.yaml` and try
-running `patrol` — the compiler rejects it because the minimal robot
-lacks the `lidar_2d` capability that `go_to` requires.
+running `inspect` — the compiler rejects it because the minimal robot
+lacks the `rgb_camera` capability that `capture_image` requires.
 
 **Customize a verb:** Open `verbs/go_to.yaml` and add a `parameters:`
 section to override defaults (e.g. change the navigation timeout).
