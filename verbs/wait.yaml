@@ -1,0 +1,2 @@
+# Pause execution for a duration — inherits from built-in.
+extends: defined/wait

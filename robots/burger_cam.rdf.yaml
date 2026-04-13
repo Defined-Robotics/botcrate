@@ -1,0 +1,48 @@
+# TurtleBot3 Burger + Camera — adds RGB camera for vision tasks
+# Use this robot for tasks that require image capture (inspect, security_round).
+name: turtlebot3_burger_cam
+version: "0.0.1"
+description: >
+  TurtleBot3 Burger with an added RGB camera module.
+  Supports all burger tasks plus vision tasks like inspect and capture_image.
+
+modules:
+  - name: drive_base
+    type: motor_controller
+    capabilities:
+      - name: differential_drive
+        type: differential_drive
+        parameters:
+          wheel_separation: 0.160
+          wheel_radius: 0.033
+          max_linear_velocity: 0.22
+          max_angular_velocity: 2.84
+
+      - name: wheel_encoders
+        type: wheel_encoders
+        parameters:
+          ticks_per_revolution: 4096
+
+  - name: lidar_module
+    type: sensor
+    capabilities:
+      - name: laser_scanner
+        type: lidar_2d
+        parameters:
+          model: LDS-01
+          range_min: 0.120
+          range_max: 3.500
+          samples: 360
+          update_rate: 5.0
+          topic: /scan
+
+  - name: camera_module
+    type: sensor
+    capabilities:
+      - name: rgb_camera
+        type: rgb_camera
+        parameters:
+          resolution_width: 640
+          resolution_height: 480
+          fps: 30
+          topic: /camera/image_raw

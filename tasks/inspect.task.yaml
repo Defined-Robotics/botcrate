@@ -1,0 +1,30 @@
+# Inspect — navigate to each survey point and capture an image.
+# Works with: burger_cam only (requires rgb_camera)
+# Requires: differential_drive, lidar_2d, rgb_camera
+name: Inspect
+description: "Visit survey points and capture an image at each location"
+steps:
+  - verb: go_to
+    params:
+      target: $world.pois.survey-1
+  - verb: capture_image
+    params:
+      topic: /camera/image_raw
+  - verb: report
+    params:
+      message: "inspected_survey_1"
+  - verb: go_to
+    params:
+      target: $world.pois.survey-2
+  - verb: capture_image
+    params:
+      topic: /camera/image_raw
+  - verb: report
+    params:
+      message: "inspected_survey_2"
+  - verb: go_to
+    params:
+      target: $world.pois.dock
+  - verb: report
+    params:
+      message: "inspection_complete"

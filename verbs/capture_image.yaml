@@ -1,0 +1,3 @@
+# Capture an image from the robot's camera — inherits from built-in.
+# Requires rgb_camera capability (use burger_cam robot).
+extends: defined/capture_image

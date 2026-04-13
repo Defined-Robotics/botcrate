@@ -1,0 +1,2 @@
+# Autonomous frontier exploration — inherits from built-in.
+extends: defined/explore

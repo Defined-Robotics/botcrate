@@ -1,0 +1,12 @@
+# Explore — autonomous frontier-based mapping.
+# Works with: burger, burger_cam
+# Requires: differential_drive, lidar_2d (via explore verb)
+name: Explore
+description: "Autonomously explore and map the environment using frontier-based SLAM"
+steps:
+  - verb: explore
+    params:
+      timeout: 300.0
+  - verb: report
+    params:
+      message: "exploration_complete"

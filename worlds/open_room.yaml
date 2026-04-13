@@ -1,0 +1,30 @@
+# Open room — 10x10m room with no internal walls
+# Three patrol POIs in an open floor plan.
+name: room_10x10
+description: >
+  A 10m x 10m open room with perimeter walls only.
+  Good for testing basic navigation without obstacles.
+
+pois:
+  dock:
+    x: 0.0
+    y: 0.0
+    type: constant
+    description: Home/charging station
+  corner-a:
+    x: 3.0
+    y: 3.0
+    type: static
+    description: Northeast corner patrol point
+  corner-b:
+    x: -3.0
+    y: -3.0
+    type: static
+    description: Southwest corner patrol point
+
+sim:
+  environment: room_10x10
+  spawn:
+    x: 0.0
+    y: 0.0
+    yaw: 0.0

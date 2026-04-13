@@ -1,0 +1,48 @@
+# Security round — patrol with camera captures and dwell time at each point.
+# Works with: burger_cam only (requires rgb_camera)
+# Requires: differential_drive, lidar_2d, rgb_camera
+name: SecurityRound
+description: "Patrol survey points with dwell time and image capture at each"
+steps:
+  - verb: go_to
+    params:
+      target: $world.pois.survey-1
+  - verb: wait
+    params:
+      duration: 3.0
+  - verb: capture_image
+    params:
+      topic: /camera/image_raw
+  - verb: report
+    params:
+      message: "secured_survey_1"
+  - verb: go_to
+    params:
+      target: $world.pois.survey-2
+  - verb: wait
+    params:
+      duration: 3.0
+  - verb: capture_image
+    params:
+      topic: /camera/image_raw
+  - verb: report
+    params:
+      message: "secured_survey_2"
+  - verb: go_to
+    params:
+      target: $world.pois.survey-3
+  - verb: wait
+    params:
+      duration: 3.0
+  - verb: capture_image
+    params:
+      topic: /camera/image_raw
+  - verb: report
+    params:
+      message: "secured_survey_3"
+  - verb: go_to
+    params:
+      target: $world.pois.dock
+  - verb: report
+    params:
+      message: "security_round_complete"

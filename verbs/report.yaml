@@ -1,0 +1,2 @@
+# Publish a status report — inherits from built-in.
+extends: defined/report

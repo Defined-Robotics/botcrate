@@ -1,0 +1,3 @@
+# Navigate to a waypoint — inherits everything from the built-in verb.
+# Override any field here to customize (e.g. change default timeout).
+extends: defined/go_to

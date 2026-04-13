@@ -1,0 +1,36 @@
+# Patrol — visit each survey point and report back to dock.
+# Works with: burger, burger_cam
+# Requires: differential_drive, lidar_2d (via go_to verb)
+name: Patrol
+description: "Visit survey points in sequence, report at each, return to dock"
+steps:
+  - verb: go_to
+    params:
+      target: $world.pois.survey-1
+  - verb: report
+    params:
+      message: "arrived_survey_1"
+  - verb: wait
+    params:
+      duration: 2.0
+  - verb: go_to
+    params:
+      target: $world.pois.survey-2
+  - verb: report
+    params:
+      message: "arrived_survey_2"
+  - verb: wait
+    params:
+      duration: 2.0
+  - verb: go_to
+    params:
+      target: $world.pois.survey-3
+  - verb: report
+    params:
+      message: "arrived_survey_3"
+  - verb: go_to
+    params:
+      target: $world.pois.dock
+  - verb: report
+    params:
+      message: "patrol_complete"

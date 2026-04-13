@@ -1,0 +1,17 @@
+# Botcrate — your first Defined Robotics project
+# Edit this file to change your robot, world, or simulation image.
+
+project:
+  name: botcrate
+
+robot:
+  rdf: robots/burger.rdf.yaml
+
+world:
+  file: worlds/maze.yaml
+
+verbs:
+  path: verbs/
+
+sim:
+  image: ghcr.io/defined-robotics/sim:0.1.0

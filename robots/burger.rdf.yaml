@@ -1,0 +1,37 @@
+# TurtleBot3 Burger — differential drive + 2D LiDAR
+# This is the default robot for botcrate. It can navigate, explore, and patrol.
+name: turtlebot3_burger
+version: "0.0.1"
+description: >
+  TurtleBot3 Burger differential-drive robot with 360-degree LiDAR.
+  Supports navigation, exploration, and patrol tasks.
+
+modules:
+  - name: drive_base
+    type: motor_controller
+    capabilities:
+      - name: differential_drive
+        type: differential_drive
+        parameters:
+          wheel_separation: 0.160
+          wheel_radius: 0.033
+          max_linear_velocity: 0.22
+          max_angular_velocity: 2.84
+
+      - name: wheel_encoders
+        type: wheel_encoders
+        parameters:
+          ticks_per_revolution: 4096
+
+  - name: lidar_module
+    type: sensor
+    capabilities:
+      - name: laser_scanner
+        type: lidar_2d
+        parameters:
+          model: LDS-01
+          range_min: 0.120
+          range_max: 3.500
+          samples: 360
+          update_rate: 5.0
+          topic: /scan

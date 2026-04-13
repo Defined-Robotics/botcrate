@@ -1,0 +1,35 @@
+# Maze world — 10x10m room with S-curve internal walls
+# Four patrol POIs placed in accessible areas of the maze.
+name: maze_10x10
+description: >
+  A 10m x 10m room with internal maze walls creating an S-curve layout.
+  Good for testing navigation in confined spaces.
+
+pois:
+  dock:
+    x: 0.0
+    y: 0.0
+    type: constant
+    description: Home/charging station
+  survey-1:
+    x: 2.0
+    y: 1.5
+    type: static
+    description: First survey point (near maze entrance)
+  survey-2:
+    x: 3.0
+    y: -1.5
+    type: static
+    description: Second survey point (past first wall gap)
+  survey-3:
+    x: 1.0
+    y: -3.0
+    type: static
+    description: Third survey point (far end of maze)
+
+sim:
+  environment: maze_10x10
+  spawn:
+    x: 0.0
+    y: 0.0
+    yaw: 0.0
