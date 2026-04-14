@@ -1,0 +1,36 @@
+# Warehouse world — 16x10m with shelf aisles
+# POIs use the standard naming (dock, survey-1/2/3) so tasks are portable.
+name: warehouse
+description: >
+  A 16m x 10m warehouse with two rows of shelving creating
+  three aisles. Good for testing navigation in structured
+  industrial environments.
+
+pois:
+  dock:
+    x: -6.0
+    y: -3.5
+    type: constant
+    description: Loading dock / charging station
+  survey-1:
+    x: -4.0
+    y: 0.0
+    type: static
+    description: First aisle checkpoint
+  survey-2:
+    x: 0.0
+    y: 0.0
+    type: static
+    description: Centre aisle checkpoint
+  survey-3:
+    x: 5.0
+    y: 3.5
+    type: static
+    description: Staging area checkpoint
+
+sim:
+  environment: warehouse
+  spawn:
+    x: -6.0
+    y: -3.5
+    yaw: 0.0

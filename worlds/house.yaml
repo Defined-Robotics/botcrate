@@ -1,0 +1,36 @@
+# House world — 10x8m with four rooms
+# POIs use the standard naming (dock, survey-1/2/3) so tasks are portable.
+name: house
+description: >
+  A 10m x 8m single-storey house with four rooms: kitchen,
+  bedroom, living room, and entrance. Connected by doorways.
+  Good for testing room-to-room navigation.
+
+pois:
+  dock:
+    x: 3.0
+    y: -2.5
+    type: constant
+    description: Front entrance / charging station
+  survey-1:
+    x: -3.0
+    y: -2.0
+    type: static
+    description: Kitchen checkpoint
+  survey-2:
+    x: -3.0
+    y: 2.0
+    type: static
+    description: Bedroom checkpoint
+  survey-3:
+    x: 3.0
+    y: 2.0
+    type: static
+    description: Living room checkpoint
+
+sim:
+  environment: house
+  spawn:
+    x: 3.0
+    y: -2.5
+    yaw: 0.0
