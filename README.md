@@ -41,8 +41,10 @@ botcrate/
     burger_cam.rdf.yaml # Burger + RGB camera (for vision tasks)
     minimal.rdf.yaml    # Drive-only (shows capability gating)
   worlds/
-    maze.yaml           # 10x10m maze with 4 POIs
-    open_room.yaml      # 10x10m open room with 3 POIs
+    maze.yaml           # 10x10m maze with 4 POIs (default)
+    warehouse.yaml      # 16x10m warehouse with shelf aisles
+    house.yaml          # 10x8m house with 4 rooms
+    open_room.yaml      # 10x10m open room (no obstacles)
   tasks/
     patrol.task.yaml    # Visit POIs in sequence
     explore.task.yaml   # Autonomous frontier exploration
@@ -61,12 +63,13 @@ botcrate/
 **Switch robots:** Edit `defined.yaml` to point to `robots/burger_cam.rdf.yaml`,
 then run the `inspect` task — it captures images at each survey point.
 
-**Switch worlds:** Change `world: { file: worlds/open_room.yaml }` in
-`defined.yaml` for a different environment. Same tasks, different layout.
+**Switch worlds:** Change `world: { file: worlds/warehouse.yaml }` or
+`worlds/house.yaml` in `defined.yaml` for a different environment.
+Same tasks, different layout and POIs.
 
 **See capability gating:** Point to `robots/minimal.rdf.yaml` and try
-running `patrol` — the compiler rejects it because the minimal robot
-lacks the `lidar_2d` capability that `go_to` requires.
+running `inspect` — the compiler rejects it because the minimal robot
+lacks the `rgb_camera` capability that `capture_image` requires.
 
 **Customize a verb:** Open `verbs/go_to.yaml` and add a `parameters:`
 section to override defaults (e.g. change the navigation timeout).

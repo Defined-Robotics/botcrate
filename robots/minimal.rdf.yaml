@@ -1,12 +1,12 @@
 # Minimal robot — differential drive only (no LiDAR, no camera)
-# This robot demonstrates capability gating: tasks requiring lidar_2d
-# or rgb_camera will be rejected at compile time.
+# This robot demonstrates capability gating: tasks using capture_image
+# (which requires rgb_camera) will be rejected at compile time.
 name: minimal_bot
 version: "0.0.1"
 description: >
   Bare-minimum differential-drive robot with no sensors.
   Use this to see how capability gating works — try running
-  patrol (needs lidar_2d) and watch it fail with a clear error.
+  inspect (needs rgb_camera) and watch it fail with a clear error.
 
 modules:
   - name: drive_base
