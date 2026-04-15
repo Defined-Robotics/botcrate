@@ -68,8 +68,8 @@ then run the `inspect` task — it captures images at each survey point.
 running `patrol` — the compiler rejects it because the minimal robot
 lacks the `lidar_2d` capability that `go_to` requires.
 
-**Customize a verb:** Open `verbs/go_to.yaml` and add a `parameters:`
-section to override defaults (e.g. change the navigation timeout).
+**Customize a verb:** Add `timeout: 120.0` to any `go_to` step's `params:`
+in your task YAML to override the default 60s navigation timeout.
 
 ## Requirements
 
