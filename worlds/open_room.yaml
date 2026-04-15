@@ -11,16 +11,21 @@ pois:
     y: 0.0
     type: constant
     description: Home/charging station
-  corner-a:
+  survey-1:
     x: 3.0
     y: 3.0
     type: static
-    description: Northeast corner patrol point
-  corner-b:
+    description: Northeast corner survey point
+  survey-2:
     x: -3.0
     y: -3.0
     type: static
-    description: Southwest corner patrol point
+    description: Southwest corner survey point
+  survey-3:
+    x: 3.0
+    y: -3.0
+    type: static
+    description: Southeast corner survey point
 
 sim:
   environment: room_10x10

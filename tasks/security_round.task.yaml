@@ -4,6 +4,9 @@
 name: SecurityRound
 description: "Patrol survey points with dwell time and image capture at each"
 steps:
+  - verb: explore
+    params:
+      timeout: 120.0
   - verb: go_to
     params:
       target: $world.pois.survey-1

@@ -71,8 +71,8 @@ Same tasks, different layout and POIs.
 running `inspect` — the compiler rejects it because the minimal robot
 lacks the `rgb_camera` capability that `capture_image` requires.
 
-**Customize a verb:** Open `verbs/go_to.yaml` and add a `parameters:`
-section to override defaults (e.g. change the navigation timeout).
+**Customize a verb:** Add `timeout: 120.0` to any `go_to` step's `params:`
+in your task YAML to override the default 60s navigation timeout.
 
 ## Requirements
 

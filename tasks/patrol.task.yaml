@@ -4,6 +4,9 @@
 name: Patrol
 description: "Visit survey points in sequence, report at each, return to dock"
 steps:
+  - verb: explore
+    params:
+      timeout: 120.0
   - verb: go_to
     params:
       target: $world.pois.survey-1
