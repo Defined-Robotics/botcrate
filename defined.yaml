@@ -14,4 +14,4 @@ verbs:
   path: verbs/
 
 sim:
-  image: defined_robotics/sim:0.1.1-dev
+  image: defined_robotics/sim:latest
