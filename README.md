@@ -78,10 +78,34 @@ in your task YAML to override the default 60s navigation timeout.
 
 - Python 3.12+
 - [uv](https://docs.astral.sh/uv/)
-- Docker Desktop (for simulation)
+- Docker — Docker Desktop on macOS/Windows, Docker Engine on Linux
+  (on Linux, your user must be in the `docker` group; see Troubleshooting)
+
+## Troubleshooting
+
+**`Cannot connect to Docker — permission denied on socket`**
+On Linux, the docker daemon's socket is only readable by root and members
+of the `docker` group. Fix once:
+
+```bash
+sudo usermod -aG docker $USER
+newgrp docker        # apply in current shell, or log out and back in
+docker info          # verify
+```
+
+**`Cannot connect to Docker — daemon not running`**
+Start Docker, then verify with `docker info`.
+
+**TUI shows "Disconnected" and nothing happens**
+Check the **Diagnostics** panel — backend failures (image pull, container
+crash, rosbridge unreachable) surface there with a suggested fix.
 
 ## Links
 
 - [Defined Robotics](https://github.com/Defined-Robotics)
-- [defined-cli](https://github.com/Defined-Robotics/defined-cli)
-- [defined-compiler](https://github.com/Defined-Robotics/verb-compiler)
+- [defined-cli](https://github.com/Defined-Robotics/defined-cli) — the
+  `defined` command you just installed
+- [verb-compiler](https://github.com/Defined-Robotics/verb-compiler) — the
+  repo behind the task → BT XML compiler (publishes the `defined-compiler`
+  Python package; the repo name reflects the *verb* DSL it compiles, the
+  package name reflects what it produces)

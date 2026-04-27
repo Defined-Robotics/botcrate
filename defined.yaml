@@ -14,4 +14,4 @@ verbs:
   path: verbs/
 
 sim:
-  image: defined_robotics/sim:latest
+  image: ghcr.io/defined-robotics/sim:latest
