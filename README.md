@@ -93,15 +93,12 @@ newgrp docker        # apply in current shell, or log out and back in
 docker info          # verify
 ```
 
-**`Registry denied pull for ghcr.io/defined-robotics/sim:latest`**
-The image is private (or moved). Either authenticate with a PAT scoped
-`read:packages`:
-
-```bash
-echo $GHCR_PAT | docker login ghcr.io -u <your-user> --password-stdin
-```
-
-…or update `sim.image:` in `defined.yaml` to a reachable ref.
+**`Registry denied pull for ghcr.io/defined-robotics/sim:...`**
+The sim image is meant to be a public GHCR package — you should never
+need to `docker login` for it. If you hit this, the package visibility
+likely regressed or the tag was retracted. Please
+[open an issue](https://github.com/Defined-Robotics/botcrate/issues)
+rather than working around it locally.
 
 **`Cannot connect to Docker — daemon not running`**
 Start Docker, then verify with `docker info`.
